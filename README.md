@@ -5,6 +5,13 @@ First add the ip-adress of your UNAS Pro drive to `deployment.yml`.
 This can be found within the topology in the Unifi web UI.
 Also add the folder names of your shared drives and potentially subfolders.
 
+Please make sure you also added every ip-adress of your cluster nodes to the
+UNAS Pro. This can be done in the web UI of the drive under:
+
+```text 
+Settings > Services > Add NFS connections
+```
+
 Then apply kubernetes files:
 
 ```shell
