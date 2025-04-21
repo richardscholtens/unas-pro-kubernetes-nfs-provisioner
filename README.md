@@ -54,3 +54,6 @@ existing unseal keys shares. See "vault operator rekey" for more information.
 ```
 
 Store the keys and have fun!
+
+PS: Shout out to woutceu for mentioning the mount options.
+https://community.ui.com/questions/NFS-File-shares-in-UNAS/fa03aa65-afec-4106-90bd-77c7b6e044c4#answer/bf4c757e-83c9-4870-8278-d006d1dbc19b
