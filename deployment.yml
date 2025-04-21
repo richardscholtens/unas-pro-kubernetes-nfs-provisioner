@@ -1,0 +1,36 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nfs-client-provisioner
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: nfs.csi.k8s.io
+            - name: NFS_SERVER
+              value: <ip-adress if UNAS Pro>
+            - name: NFS_PATH
+              value: /var/nfs/shared/<name folder>/<name subfolder>/
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: <ip-adress if UNAS Pro>
+            path: /var/nfs/shared/<name folder>/<name subfolder>/
+            readOnly: false
