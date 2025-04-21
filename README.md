@@ -18,7 +18,8 @@ kubectl apply -f clustor-role-binding.yml
 After applying the Kubernetes resources a NFS client provisioner will start running on
 your cluster.
 
-Try it out by installing the HashiCorp Vault.
+Try it out by installing the HashiCorp Vault. 
+Also see [HashiCorp documentation](https://developer.hashicorp.com/vault/docs/platform/k8s/helm)
 
 ```shell
 helm repo add hashicorp https://helm.releases.hashicorp.com
