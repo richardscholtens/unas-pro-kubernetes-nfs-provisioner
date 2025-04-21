@@ -1,8 +1,11 @@
 # unas-pro-kubernetes-nfs-provisioner
 A Kubernetes NFS provisioner compatible with the UNAS Pro and Hashicorp Vault.
 
+First add the ip-adress of your UNAS Pro drive to `deployment.yml`.
+This can be found within the topology in the Unifi web UI.
+Also add the folder names of your shared drives and potentially subfolders.
 
-Apply kubernetes files:
+Then apply kubernetes files:
 
 ```shell
 kubectl apply -f deployment.yml
